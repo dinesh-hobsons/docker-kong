@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t mashape/kong:0.8.1 .
+docker build -t docker-east1.hobsons-labs.com/kong:0.8.3 .

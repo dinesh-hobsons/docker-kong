@@ -1,5 +1,11 @@
-FROM mashape/kong:0.8.1
-MAINTAINER Dinesh Bhat, dinesh.bhat@hobsons.com
+FROM mashape/kong:0.8.3
+MAINTAINER Dinesh Bhat 
+
+ENV KONG_VERSION 0.8.3
+
+VOLUME ["/etc/kong/"]
+
+COPY config.docker/kong.yml /etc/kong/kong.yml
 
 ADD setup.sh setup.sh
 RUN chmod +x setup.sh
