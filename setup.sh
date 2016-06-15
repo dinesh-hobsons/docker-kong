@@ -12,7 +12,11 @@ if [ -n "$KONG_DATABASE_PORT_5432_TCP_PORT" ]; then
 	sed -i.bak s/5432/$KONG_DATABASE_PORT_5432_TCP_PORT/g /etc/kong/kong.yml
 fi
 
-if [ -n "$KONG_DATABASE_PASSWORD" ]; then
-	sed -i.bak s/kong-password/$KONG_DATABASE_PASSWORD/g /etc/kong/kong.yml
+if [ -n "$DATABASE_PASSWORD" ]; then
+	sed -i.bak s/kong-password/$DATABASE_PASSWORD/g /etc/kong/kong.yml
+fi
+
+if [ -n "$DATABASE_HOST" ]; then
+	sed -i.bak s/kong-database/$DATABASE_HOST/g /etc/kong/kong.yml
 fi
 
