@@ -1,8 +1,8 @@
 postgres:
   host: "kong-database"
   port: 5432
-  database: kong
-  user: kong
+  database: kongDB
+  user: kong-user
   password: kong-password
 cassandra:
   contact_points:
