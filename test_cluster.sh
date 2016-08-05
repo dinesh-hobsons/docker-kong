@@ -56,13 +56,13 @@ docker run  -d   \
 
 setupCluster
 
-serverCount=$(http localhost:8001/cluster | python -mjson.tool | grep total | cut -d: -f2)
+serverCount=$(curl http://localhost:8001/cluster | python -mjson.tool | grep total | cut -d: -f2)
 if [ ${serverCount} -ne 3 ]
 then
    echo "Error: expected 3 kong servers to be alive, got ${serverCount}"
 fi
 
-clusterCount=$(http localhost:8001/cluster | python -mjson.tool | grep -c "status\": \"alive")
+clusterCount=$(curl http://localhost:8001/cluster | python -mjson.tool | grep -c "status\": \"alive")
 if [ $clusterCount -ne 3 ]
 then
    echo "Error: expected 3 kong servers to be alive, got ${clusterCount}"
