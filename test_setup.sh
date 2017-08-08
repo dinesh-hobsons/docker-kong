@@ -21,6 +21,10 @@ testKongDockerImage(){
 	startKongApiGateway $1 $2 $3 $4 ${KONG_API_CONTAINER_NAME}
 }
 
+#clean up all docker containers
+# need to be more specific TODO
+docker rm -f $(docker ps -aq)
+
 testKongDockerImage kong kong kong 5432
 testKongDockerImage kong kong kong 5431
 testKongDockerImage kong kong kong123 5431

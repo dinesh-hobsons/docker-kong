@@ -1,4 +1,4 @@
-FROM mashape/kong:0.8.3
+FROM turbo-registry2.hobsonshighered.com/kong:0.8.3
 MAINTAINER Dinesh Bhat 
 
 ENV KONG_VERSION 0.8.3

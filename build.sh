@@ -1,4 +1,5 @@
 #!/bin/bash
-docker build -t docker-east1.hobsons-labs.com/kong:0.8.3 .
-docker tag docker-east1.hobsons-labs.com/kong:0.8.3 docker-east1.hobsons-labs.com/kong:latest
-./test_setup.sh && ./test_cluster.sh && docker push docker-east1.hobsons-labs.com/kong:latest
+set -e
+docker build -t turbo-registry2.hobsonshighered.com/starfish-kong:0.8.3 .
+docker tag turbo-registry2.hobsonshighered.com/starfish-kong:0.8.3 turbo-registry2.hobsonshighered.com/starfish-kong:latest
+./test_setup.sh && ./test_cluster.sh 

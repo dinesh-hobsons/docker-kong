@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 #contains kong utilities
 readonly BOLD=`tput bold`
@@ -67,7 +68,7 @@ startKongDatabase() {
     echo "Starting Kong DB"
 
     local dockerHostIp=$(getDockerHost)
-    local postgresDockerImageName=docker-east1.hobsons-labs.com/postgres:9.5
+    local postgresDockerImageName=postgres:9.5
  	local dbName=$1
 	local dbUser=$2
 	local dbPassword=$3
@@ -100,7 +101,7 @@ startKongApiGateway() {
 	local dbPort=$4
 	local containerName=$5
     local dockerHostIp=$(getDockerHost)
-    local kongDockerImageName=docker-east1.hobsons-labs.com/kong:latest
+    local kongDockerImageName=turbo-registry2.hobsonshighered.com/starfish-kong:latest
 
     killContainer ${containerName}
     echo "Start kong-api gateway $containerName"
