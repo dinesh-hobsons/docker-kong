@@ -47,3 +47,9 @@ else
 	sed -i.bak s/kong-user/kong/g /etc/kong/kong.yml
 fi
 
+response=no
+until [[ "${response}" == "yes" ]]; do
+	response=$(ncat $DATABASE_HOST $DATABASE_PORT </dev/null >/dev/null && echo "yes")
+	sleep 5
+done
+

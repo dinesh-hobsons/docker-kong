@@ -1,4 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
-.test_setup.sh.swp
+**/*.swp
 docker-kong.iml
